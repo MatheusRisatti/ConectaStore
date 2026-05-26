@@ -28,7 +28,7 @@ namespace ConectaStore.API.Models;
         [NotMapped]
         public decimal MargemLucro => ValorVenda - ValorCusto;
 
-        public decimal Destaque { get; set; }
+        public bool Destaque { get; set; }
 
         [StringLength(300)]
         public string Foto { get; set; }
