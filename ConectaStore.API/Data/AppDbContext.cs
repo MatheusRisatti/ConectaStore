@@ -28,7 +28,7 @@ public class AppDbContext : DbContext
           new() {Id = 1, Nome = "Smartphones"},  
           new() {Id = 2, Nome = "Notebooks"},  
           new() {Id = 3, Nome = "Smartwatches"},  
-          new() {Id = 3, Nome = "Fones de Ouvido"}  
+          new() {Id = 4, Nome = "Fones de Ouvido"}  
         ];
         builder.Entity<Categoria>().HasData(categorias);
     }
