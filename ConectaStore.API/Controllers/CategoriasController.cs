@@ -42,7 +42,7 @@ public class CategoriasController : ControllerBase
         return CreatedAtAction("GetCategoria", new{id = categoria.Id}, categoria);
     }
 
-    [HttpPut("id")]
+    [HttpPut("{id}")]
     public ActionResult PutCategoria(int id, [FromBody] Categoria categoria)
     {
         if(!ModelState.IsValid || id != categoria.Id)
@@ -63,7 +63,7 @@ public class CategoriasController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("id")]
+    [HttpDelete("{id}")]
     public ActionResult DeleteCategoria(int id)
     {
         var categoria = _context.Categorias.Find(id);

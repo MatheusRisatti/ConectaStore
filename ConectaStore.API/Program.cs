@@ -23,7 +23,21 @@ builder.Services.AddSwaggerGen(c =>
    }); 
 });
 
+// Configuração do CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirTudo",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
+
+app.UseCors("PermitirTudo");
 
 // Garante que o banco exista ao executar
 using (var scope = app.Services.CreateScope())
